@@ -1,0 +1,33 @@
+public class t2 {
+
+
+    public static void main(String[] args) {
+        int i, j, flag, k = 0;
+        Scanner s1 = new Scanner(System.in);
+        System.out.println("Enter the number of fruits:");
+        int str=s1.nextInt();
+        int[] fruits = new int[str];
+        int[] arr1 = new int[str];
+        System.out.println("Enter the weights of the fruits: ");
+        for(i=0;i<str;i++)
+            fruits[i]=s1.nextInt();
+
+        for (i = 0; i < str; i++) {
+            if (i == 0)
+                arr1[k++] = fruits[i];
+            else {
+                flag = 0;
+                for (j = 0; j < i; j++)
+                {
+                    if (fruits[j]==fruits[i])
+                        flag++;
+                }
+                if (flag == 0)
+                    arr1[k++] = fruits[i];
+            }
+
+        }
+        System.out.println();
+        System.out.println("The number of slices are: "+k);
+        }
+}
